@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleMove : MonoBehaviour
+public class AirplaneMove : MonoBehaviour
 {
     public float maxSpeed;
     public float Speed;
@@ -16,7 +16,7 @@ public class ObstacleMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         render = GetComponent<SpriteRenderer>();
         rain = GameObject.Find("Player");
-        if(transform.position.x > rain.transform.position.x)
+        if (transform.position.x > rain.transform.position.x)
         {
             h = -1;
         }

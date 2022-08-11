@@ -69,6 +69,11 @@ public class RainControl : MonoBehaviour
             gameObject.SetActive(false);
             Image.SetActive(true);
         }
+        if (col.tag == "Cloud")
+        {
+            transform.localScale = new Vector3(transform.localScale.x + 0.5f, transform.localScale.y + 0.5f, 1);
+            //rigid.velocity = new Vector2(rigid.velocity.x, 0);
+        }
     }
     void SetRemDisText()
     {
