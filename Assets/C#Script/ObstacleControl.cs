@@ -11,13 +11,16 @@ public class ObstacleControl : MonoBehaviour
     public GameObject Cloud_1;
     public GameObject Cloud_2;
     public GameObject Cloud_3;
+    public GameObject Warning;
     GameObject Camera;
+    GameObject player;
 
     void Start()
     {
         InvokeRepeating("SpawnObstacle", 5, 3);
-        InvokeRepeating("SpawnCloud", 3, 6);
+        InvokeRepeating("SpawnCloud", 3, 8);
         Camera = GameObject.Find("Main_Camera");
+        player = GameObject.Find("Player");
     }
     private void Awake()
     {
@@ -32,7 +35,7 @@ public class ObstacleControl : MonoBehaviour
     {
         int choice = Random.Range(0, 2);
         int plus = Random.Range(5, 10);
-        int kind = Random.Range(0, 4);
+        int kind = Random.Range(0, 101);
         float rplus = Random.Range(-1.2f, 1.2f);
         
         if(kind == 0)
@@ -61,23 +64,17 @@ public class ObstacleControl : MonoBehaviour
                 GameObject birds = (GameObject)Instantiate(Birds, new Vector3(Camera.transform.position.x - 10, Camera.transform.position.y - 23, 0), Quaternion.identity);
             }
         }
-        else if(kind == 3)
+        else if(kind >= 3)
         {
-            if (choice >= 1)
-            {
-                GameObject meteor = (GameObject)Instantiate(Meteor, new Vector3(Camera.transform.position.x + 1, Camera.transform.position.y +3, 0), Quaternion.identity);
-            }
-            else
-            {
-                GameObject meteor = (GameObject)Instantiate(Meteor, new Vector3(Camera.transform.position.x + 1, Camera.transform.position.y +3, 0), Quaternion.identity);
-            }
+            GameObject warning = (GameObject)Instantiate(Warning, new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, 0), Quaternion.identity);
+            GameObject meteor = (GameObject)Instantiate(Meteor, new Vector3(player.transform.position.x, player.transform.position.y +3, 0), Quaternion.identity);
         }
     }
 
     void SpawnCloud()
     {
         int choice = Random.Range(0, 2);
-        int kind = Random.Range(0, 3);
+        int kind = Random.Range(0, 4);
         int plus = Random.Range(0, 2);
         if (choice >= 1)
         {
