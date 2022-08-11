@@ -16,10 +16,7 @@ public class RainControl : MonoBehaviour
     }
     void Start()
     {
-        if (Input.GetButtonUp("Horizontal"))
-        {
-            rigid.velocity = new Vector2(0, rigid.velocity.y);
-        }
+
     }
 
     void FixedUpdate()
@@ -33,9 +30,17 @@ public class RainControl : MonoBehaviour
         {
             rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
         }
+        {
+            rigid.velocity = new Vector2(rigid.velocity.x, maxSpeed);
+        }
+        if(rigid.velocity.y > maxSpeed)
         else if (rigid.velocity.x < maxSpeed * (-1))
         {
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
+        }
+        if (Input.GetButtonUp("Horizontal"))
+        {
+            rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.3f, rigid.velocity.y);
         }
     }
 
