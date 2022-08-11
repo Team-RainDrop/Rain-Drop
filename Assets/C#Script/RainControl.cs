@@ -13,13 +13,14 @@ public class RainControl : MonoBehaviour
     private TextMeshProUGUI myRemDis;
     private int RemDis = 0;
 
-
+    SpriteRenderer render;
     Rigidbody2D rigid;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         myRemDis = GameObject.Find("RemDis").GetComponent<TextMeshProUGUI>();
+        render = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -50,6 +51,10 @@ public class RainControl : MonoBehaviour
     private void Update()
     {
         SetRemDisText();
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            render.flipX = Input.GetAxisRaw("Horizontal") == -1;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
