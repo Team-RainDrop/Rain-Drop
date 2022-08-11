@@ -35,7 +35,7 @@ public class ObstacleControl : MonoBehaviour
     {
         int choice = Random.Range(0, 2);
         int plus = Random.Range(5, 10);
-        int kind = Random.Range(0, 101);
+        int kind = Random.Range(0, 4);
         float rplus = Random.Range(-1.2f, 1.2f);
         
         if(kind == 0)
@@ -64,7 +64,7 @@ public class ObstacleControl : MonoBehaviour
                 GameObject birds = (GameObject)Instantiate(Birds, new Vector3(Camera.transform.position.x - 10, Camera.transform.position.y - 23, 0), Quaternion.identity);
             }
         }
-        else if(kind >= 3)
+        else if(kind == 3)
         {
             GameObject warning = (GameObject)Instantiate(Warning, new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, 0), Quaternion.identity);
             GameObject meteor = (GameObject)Instantiate(Meteor, new Vector3(player.transform.position.x, player.transform.position.y +3, 0), Quaternion.identity);
