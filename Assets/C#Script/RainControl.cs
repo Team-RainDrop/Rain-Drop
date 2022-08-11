@@ -30,10 +30,10 @@ public class RainControl : MonoBehaviour
         {
             rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
         }
+        if (rigid.velocity.y > maxSpeed)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, maxSpeed);
         }
-        if(rigid.velocity.y > maxSpeed)
         else if (rigid.velocity.x < maxSpeed * (-1))
         {
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
