@@ -908,8 +908,8 @@ GameObject:
   - component: {fileID: 945230344}
   - component: {fileID: 945230347}
   - component: {fileID: 945230346}
-  - component: {fileID: 945230345}
-  - component: {fileID: 945230348}
+  - component: {fileID: 945230349}
+  - component: {fileID: 945230350}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -932,27 +932,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &945230345
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945230343}
-  m_BodyType: 0
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &945230346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1031,7 +1010,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &945230348
+--- !u!50 &945230349
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945230343}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &945230350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1455,10 +1455,11 @@ MonoBehaviour:
   Airplane: {fileID: 5482110132212526113, guid: 1ac1098fbac357146b334c6fb80cdc3d, type: 3}
   Rocket: {fileID: 4244706792650951868, guid: bd480bca10100c442b99d8f1d185d653, type: 3}
   Birds: {fileID: 2311541402964784351, guid: ef9955bd24b53fc49b6d7a69c35e4379, type: 3}
-  Meteor: {fileID: 0}
+  Meteor: {fileID: 2609558867753954293, guid: 0b5b4ace77fe0a44fb06320b454ccb00, type: 3}
   Cloud_1: {fileID: 5936586826377675992, guid: eb467f18cad946442952e2cb817326e7, type: 3}
   Cloud_2: {fileID: 440119301429809638, guid: 7ddf77a28bfd54945a73ede8c68710b8, type: 3}
   Cloud_3: {fileID: 3440316506176685120, guid: 1660a6fe6b1642b49bb103a1b27d2a87, type: 3}
+  Warning: {fileID: 1811390938684997205, guid: b337639fd512b704ead010f10307c5e3, type: 3}
 --- !u!4 &1970394481
 Transform:
   m_ObjectHideFlags: 0
