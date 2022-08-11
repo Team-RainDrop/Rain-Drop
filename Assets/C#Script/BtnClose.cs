@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BtnClose : MonoBehaviour
 {
-    void Scene_Close()
+    public void Scene_Close()
     {
         Application.Quit();
     }

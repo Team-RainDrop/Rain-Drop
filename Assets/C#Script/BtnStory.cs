@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class BtnStory : MonoBehaviour
 {
-    void Scene_Story()
+    public void Scene_Story()
     {
-        SceneManager.LoadScene("StoryMode");
+        SceneManager.LoadScene("Level");
     }
 }
