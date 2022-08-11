@@ -21,6 +21,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: db41c4e0f59b50d408918d9afd6b42f7
   - enabled: 1
-    path: Assets/Scenes/StoryMode.unity
-    guid: 51b0b733e065a5d4ca565e36da7d8463
+    path: Assets/Scenes/Story1.unity
+    guid: d60a902fa393ea146ab5b9a255ca456e
+  - enabled: 1
+    path: Assets/Scenes/Story2.unity
+    guid: 46496746a2168864c9f41a34e6c97b94
+  - enabled: 1
+    path: Assets/Scenes/Story3.unity
+    guid: d3a06987d1a0c77489877b80aaa3bc80
+  - enabled: 1
+    path: Assets/Scenes/Story4.unity
+    guid: e62b3c27b368ede43ac36a0db4181d99
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

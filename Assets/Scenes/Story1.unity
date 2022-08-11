@@ -1044,8 +1044,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rain: {fileID: 0}
-  maxSpeed: 0
-  Image: {fileID: 0}
+  maxSpeed: 6
+  Image: {fileID: 173146646}
 --- !u!1 &1111862603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,12 +1453,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Airplane: {fileID: 5482110132212526113, guid: 1ac1098fbac357146b334c6fb80cdc3d, type: 3}
-  Rocket: {fileID: 0}
+  Rocket: {fileID: 4244706792650951868, guid: bd480bca10100c442b99d8f1d185d653, type: 3}
   Birds: {fileID: 2311541402964784351, guid: ef9955bd24b53fc49b6d7a69c35e4379, type: 3}
   Meteor: {fileID: 0}
-  Cloud_1: {fileID: 0}
-  Cloud_2: {fileID: 0}
-  Cloud_3: {fileID: 0}
+  Cloud_1: {fileID: 5936586826377675992, guid: eb467f18cad946442952e2cb817326e7, type: 3}
+  Cloud_2: {fileID: 440119301429809638, guid: 7ddf77a28bfd54945a73ede8c68710b8, type: 3}
+  Cloud_3: {fileID: 3440316506176685120, guid: 1660a6fe6b1642b49bb103a1b27d2a87, type: 3}
 --- !u!4 &1970394481
 Transform:
   m_ObjectHideFlags: 0
