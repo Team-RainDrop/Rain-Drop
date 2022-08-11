@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class StageSelect : MonoBehaviour
 {
+    public GameObject Level;
     GameObject Buttons;
     private static int StageSet = 1;
 
@@ -13,6 +14,7 @@ public class StageSelect : MonoBehaviour
     {
         GameObject.Find("Buttons").transform.GetChild(StageSet - 1).gameObject.SetActive(true);
         GameObject.Find("Buttons").transform.GetChild(4).gameObject.SetActive(true);
+
     }
 
     void StageCheck()
@@ -66,6 +68,10 @@ public class StageSelect : MonoBehaviour
     public void Scene_GoStage1()
     {
         SceneManager.LoadScene("Story1");
+    }
+    public void ChangeLevel()
+    {
+
     }
 
     public void Scene_GoStage2()

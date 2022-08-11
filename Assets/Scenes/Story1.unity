@@ -1459,7 +1459,7 @@ MonoBehaviour:
   Cloud_1: {fileID: 5936586826377675992, guid: eb467f18cad946442952e2cb817326e7, type: 3}
   Cloud_2: {fileID: 440119301429809638, guid: 7ddf77a28bfd54945a73ede8c68710b8, type: 3}
   Cloud_3: {fileID: 3440316506176685120, guid: 1660a6fe6b1642b49bb103a1b27d2a87, type: 3}
-  Warning: {fileID: 4040666282983685305, guid: 22d5dc9ca4244bf4ba9f2ee017d4b409, type: 3}
+  Warning: {fileID: 945230343}
 --- !u!4 &1970394481
 Transform:
   m_ObjectHideFlags: 0
