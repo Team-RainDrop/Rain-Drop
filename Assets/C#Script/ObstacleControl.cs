@@ -27,12 +27,12 @@ public class ObstacleControl : MonoBehaviour
         if(choice >= 1)
         {
             int plus = Random.Range(5, 10);
-            GameObject airplane = (GameObject)Instantiate(Airplane, new Vector3(Camera.transform.position.x + plus, Camera.transform.position.y -12, 0), Quaternion.identity);
+            GameObject airplane = (GameObject)Instantiate(Airplane, new Vector3(Camera.transform.position.x + plus, Camera.transform.position.y -14, 0), Quaternion.identity);
         }
         else
         {
             int plus = Random.Range(5, 10);
-            GameObject airplane = (GameObject)Instantiate(Airplane, new Vector3(Camera.transform.position.x - plus, Camera.transform.position.y -12, 0), Quaternion.identity);
+            GameObject airplane = (GameObject)Instantiate(Airplane, new Vector3(Camera.transform.position.x - plus, Camera.transform.position.y -14, 0), Quaternion.identity);
         }
     }
 }

@@ -15,6 +15,7 @@ public class RainControl : MonoBehaviour
 
     SpriteRenderer render;
     Rigidbody2D rigid;
+    public GameObject Image;
 
     private void Awake()
     {
@@ -63,8 +64,12 @@ public class RainControl : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+        if (col.tag == "Bucket")
+        {
+            gameObject.SetActive(false);
+            Image.SetActive(true);
+        }
     }
-
     void SetRemDisText()
     {
         RemDis = (int)(transform.position.y);
