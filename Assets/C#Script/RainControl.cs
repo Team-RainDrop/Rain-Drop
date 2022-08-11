@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class RainControl : MonoBehaviour
 {
     public GameObject Rain;
     public float maxSpeed;
 
+    private TextMeshProUGUI myRemDis;
+    private int RemDis = 0;
+
+
     Rigidbody2D rigid;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-    }
-    void Start()
-    {
-
+        myRemDis = GameObject.Find("RemDis").GetComponent<TextMeshProUGUI>();
     }
 
     void FixedUpdate()
@@ -43,18 +46,24 @@ public class RainControl : MonoBehaviour
             rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.3f, rigid.velocity.y);
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
-        
+        SetRemDisText();
     }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Obstacle")
         {
             SceneManager.LoadScene("GameOver");
-
         }
     }
+
+    void SetRemDisText()
+    {
+        RemDis = (int)(transform.position.y);
+        myRemDis.text = "[Remaining Distance]: " + RemDis.ToString() + " KM";
+    }
+
 }
