@@ -9,10 +9,12 @@ public class ObstacleMove : MonoBehaviour
     Rigidbody2D rigid;
     GameObject rain;
     float h;
+    SpriteRenderer render;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        render = GetComponent<SpriteRenderer>();
         rain = GameObject.Find("Player");
         if(transform.position.x > rain.transform.position.x)
         {
@@ -22,11 +24,17 @@ public class ObstacleMove : MonoBehaviour
         {
             h = 1;
         }
-
+        if(h == 1)
+        {
+            render.flipX = true;
+        }else if(h == -1)
+        {
+            render.flipX = false;
+        }
     }
     void Start()
     {
-
+        Invoke("destroyed", 1f);
     }
 
     void Update()
@@ -44,5 +52,10 @@ public class ObstacleMove : MonoBehaviour
         {
             rigid.velocity = new Vector2(maxSpeed * -1, rigid.velocity.y);
         }
+    }
+
+    void destroyed()
+    {
+        Destroy(gameObject, 2f);
     }
 }
