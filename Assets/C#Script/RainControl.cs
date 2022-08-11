@@ -18,7 +18,7 @@ public class RainControl : MonoBehaviour
     {
         if (Input.GetButtonUp("Horizontal"))
         {
-            rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0f, rigid.velocity.y);
+            rigid.velocity = new Vector2(0, rigid.velocity.y);
         }
     }
 
