@@ -6,28 +6,46 @@ using UnityEngine.SceneManagement;
 
 public class StageSelect : MonoBehaviour
 {
-     Level level;
+    PlayerLevel playerLevel;
+    Level level;
     GameObject Buttons;
-    private static int StageSet = 1;
+    public static int StageSet = 1;
 
     void Awake()
     {
-        GameObject.Find("Buttons").transform.GetChild(StageSet - 1).gameObject.SetActive(true);
-        GameObject.Find("Buttons").transform.GetChild(4).gameObject.SetActive(true);
     }
 
     void StageCheck()
     {
             if (StageSet < 1)
             {
-                StageSet = 1;
+                StageSet ++;
             }
 
             if (StageSet > 4)
             {
-                StageSet = 4;
+                StageSet --;
             }
     }
+    void UpDownCheck (int StCh)
+    {
+        if (StCh == 1)
+        {
+            GameObject.Find("Buttons").transform.GetChild(4).gameObject.SetActive(true);
+            GameObject.Find("Buttons").transform.GetChild(5).gameObject.SetActive(false);
+        }
+        else if (StCh == 4)
+        {
+            GameObject.Find("Buttons").transform.GetChild(4).gameObject.SetActive(false);
+            GameObject.Find("Buttons").transform.GetChild(5).gameObject.SetActive(true);
+        }
+        else
+        {
+            GameObject.Find("Buttons").transform.GetChild(4).gameObject.SetActive(true);
+            GameObject.Find("Buttons").transform.GetChild(5).gameObject.SetActive(true);
+        }
+    }
+
 
     public void ButtonReset()
     {
@@ -39,33 +57,47 @@ public class StageSelect : MonoBehaviour
 
     public void ButtonControlUp()
     {
-        StageSet ++;
-        ButtonReset();
-        GameObject.Find("Buttons").transform.GetChild(StageSet - 1).gameObject.SetActive(true);
-        GameObject.Find("Buttons").transform.GetChild(4).gameObject.SetActive(true);
-        GameObject.Find("Buttons").transform.GetChild(5).gameObject.SetActive(true);
-        if (StageSet == 4)
-        {
-            GameObject.Find("Buttons").transform.GetChild(4).gameObject.SetActive(false);
-        }
+        StageSet++;
         StageCheck();
+        ButtonReset();
+        UpDownCheck(StageSet);
+        switch (StageSet)
+        {
+            case 2:
+                GameObject.Find("Buttons").transform.GetChild(1).gameObject.SetActive(true);
+                break;
+            case 3:
+                GameObject.Find("Buttons").transform.GetChild(2).gameObject.SetActive(true);
+                break;
+            case 4:
+                GameObject.Find("Buttons").transform.GetChild(3).gameObject.SetActive(true);
+                break;
+        }
     }
+
     public void ButtonControlDown()
     {
         StageSet --;
-        ButtonReset();
-        GameObject.Find("Buttons").transform.GetChild(StageSet - 1).gameObject.SetActive(true);
-        GameObject.Find("Buttons").transform.GetChild(4).gameObject.SetActive(true);
-        GameObject.Find("Buttons").transform.GetChild(5).gameObject.SetActive(true);
-        if (StageSet == 1)
-        {
-            GameObject.Find("Buttons").transform.GetChild(5).gameObject.SetActive(false);
-        }
         StageCheck();
+        ButtonReset();
+        UpDownCheck(StageSet);
+        switch (StageSet)
+        {
+            case 3:
+                GameObject.Find("Buttons").transform.GetChild(2).gameObject.SetActive(true);
+                break;
+            case 2:
+                GameObject.Find("Buttons").transform.GetChild(1).gameObject.SetActive(true);
+                break;
+            case 1:
+                GameObject.Find("Buttons").transform.GetChild(0).gameObject.SetActive(true);
+                break;
+        }
     }
 
     public void Scene_GoStage1()
     {
+        StageSet = 1;
         SceneManager.LoadScene("Story1");
     }
     public void ChangeLevel1()
@@ -75,6 +107,7 @@ public class StageSelect : MonoBehaviour
 
     public void Scene_GoStage2()
     {
+        StageSet = 1;
         SceneManager.LoadScene("Story2");
     }
     public void ChangeLevel2()
@@ -85,6 +118,7 @@ public class StageSelect : MonoBehaviour
 
     public void Scene_GoStage3()
     {
+        StageSet = 1;
         SceneManager.LoadScene("Story3");
     }
     public void ChangeLevel3()
@@ -94,6 +128,7 @@ public class StageSelect : MonoBehaviour
 
     public void Scene_GoStage4()
     {
+        StageSet = 1;
         SceneManager.LoadScene("Story4");
     }
     public void ChangeLevel4()

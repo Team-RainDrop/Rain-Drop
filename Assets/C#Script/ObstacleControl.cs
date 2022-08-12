@@ -59,6 +59,11 @@ public class ObstacleControl : MonoBehaviour
         {
             skind = Random.Range(30, 40);
         }
+        else if (Level == 5)
+        {
+            skind = Random.Range(30, 40);
+            //skind = Random.Range(40, 50);
+        }
         Debug.Log(skind);
         int choice = Random.Range(0, 2);
         int plus = Random.Range(5, 10);

@@ -7,6 +7,7 @@ TagManager:
   - Bucket
   - Obstacle
   - Cloud
+  - EE
   layers:
   - Default
   - TransparentFX

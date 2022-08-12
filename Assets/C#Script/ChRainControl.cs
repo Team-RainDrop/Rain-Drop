@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class RainControl : MonoBehaviour
+public class ChRainControl : MonoBehaviour
 {
     public GameObject Rain;
     public float maxSpeed;
 
     private TextMeshProUGUI myRemDis;
     private int RemDis = 0;
-
+    
     SpriteRenderer render;
     Rigidbody2D rigid;
     public GameObject Image;
@@ -59,14 +59,14 @@ public class RainControl : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Bucket")
-        {
-            gameObject.SetActive(false);
-            Image.SetActive(true);
-        }
         if (col.tag == "Obstacle")
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("ChallengeOver");
+        }
+
+        if (col.tag == "EE")
+        {
+            SceneManager.LoadScene("EasterEgg");
         }
 
 
@@ -78,8 +78,9 @@ public class RainControl : MonoBehaviour
     }
     void SetRemDisText()
     {
-        RemDis = (int)(transform.position.y);
-        myRemDis.text = "[Remaining Distance]: " + RemDis.ToString() + " KM";
+        RemDis = (int)(-transform.position.y);
+        ChOver.km = RemDis;
+        myRemDis.text = "[Challenge Distance]: " + RemDis.ToString() + " KM";
     }
 
 }
