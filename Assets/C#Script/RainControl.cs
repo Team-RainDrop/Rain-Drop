@@ -64,11 +64,7 @@ public class RainControl : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
-        if (col.tag == "Bucket")
-        {
-            gameObject.SetActive(false);
-            Image.SetActive(true);
-        }
+
         if (col.tag == "Cloud")
         {
             transform.localScale = new Vector3(transform.localScale.x + 0.25f, transform.localScale.y + 0.5f, 1);
@@ -79,6 +75,10 @@ public class RainControl : MonoBehaviour
     {
         RemDis = (int)(transform.position.y);
         myRemDis.text = "[Remaining Distance]: " + RemDis.ToString() + " KM";
+    }
+    public void Scene_Cclear()
+    {
+        SceneManager.LoadScene("Clear");
     }
 
 }

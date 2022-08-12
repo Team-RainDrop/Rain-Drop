@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BtrReturn : MonoBehaviour
+public class BtnReturn : MonoBehaviour
 {
-    void Scene_Return()
+    public void Scene_Return()
     {
         SceneManager.LoadScene("Lobby");
     }

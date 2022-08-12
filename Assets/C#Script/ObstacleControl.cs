@@ -13,17 +13,19 @@ public class ObstacleControl : MonoBehaviour
     public GameObject Cloud_3;
     public GameObject Warning;
     int Level;
-    int kind;
+    int skind;
     GameObject Camera;
     GameObject player;
 
 
     void Start()
     {
+
         InvokeRepeating("SpawnObstacle", 5, 3);
         InvokeRepeating("SpawnCloud", 3, 8);
         Camera = GameObject.Find("Main_Camera");
         player = GameObject.Find("Player");
+
 
     }
     private void Awake()
@@ -34,30 +36,37 @@ public class ObstacleControl : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Level);
+         
+       // Debug.Log(skind);
     }
 
     void SpawnObstacle()
     {
-
+        Level = GameObject.Find("LevelCheck").GetComponent<Level>().h;
+        if (Level == 1)
+        {
+            skind = Random.Range(0, 10);
+        }
+        else if (Level == 2)
+        {
+            skind = Random.Range(10, 20);
+        }
+        else if (Level == 3)
+        {
+            skind = Random.Range(20, 30);
+        }
+        else if (Level == 4)
+        {
+            skind = Random.Range(30, 40);
+        }
+        Debug.Log(skind);
         int choice = Random.Range(0, 2);
         int plus = Random.Range(5, 10);
         float rplus = Random.Range(-1.2f, 1.2f);
-        if(Level == 1)
-        {
-            int kind = Random.Range(0, 10);
-        }else if(Level == 2)
-        {
-            int kind = Random.Range(10, 20);
-        }else if(Level == 3)
-        {
-            int Kind = Random.Range(20, 30);
-        }else if(Level == 4)
-        {
-            int kind = Random.Range(30, 40);
-        }
+
+
         
-        if((kind >=0 && kind<=4) || (kind >=10 && kind<=13) || (kind>=20 && kind<=22) || (kind>=30 && kind<=31)) 
+        if((skind >=0 && skind<=4) || (skind >=10 && skind<=13) || (skind>=20 && skind<=22) || (skind>=30 && skind<=31)) 
         {
             if (choice >= 1)
             {
@@ -67,14 +76,16 @@ public class ObstacleControl : MonoBehaviour
             {
                 GameObject airplane = (GameObject)Instantiate(Airplane, new Vector3(Camera.transform.position.x - plus, Camera.transform.position.y - 13, 0), Quaternion.identity);
             }
+
         }
-        else if(((kind >= 4 && kind <= 7) || (kind >= 14 && kind <= 17) || (kind >= 23 && kind <= 24) || (kind == 32)))
+        else if (((skind == 8) || (skind == 18) || (skind >= 25 && skind <= 27) || (skind >= 33 && skind <= 35)))
+
         {
             GameObject rocket = (GameObject)Instantiate(Rocket, new Vector3(rplus, Camera.transform.position.y - 25, 0), Quaternion.identity);
         }
-        else if(((kind == 8) || (kind == 18) || (kind >= 25 && kind <= 27) || (kind >= 33 && kind <= 35)))
-        {
-            if (choice >= 1)
+         else if (((skind >= 4 && skind <= 7) || (skind >= 14 && skind <= 17) || (skind >= 23 && skind <= 24) || (skind == 32)))
+                {
+                    if (choice >= 1)
             {
                 GameObject birds = (GameObject)Instantiate(Birds, new Vector3(Camera.transform.position.x + 10, Camera.transform.position.y - 23, 0), Quaternion.identity);
             }
@@ -83,7 +94,7 @@ public class ObstacleControl : MonoBehaviour
                 GameObject birds = (GameObject)Instantiate(Birds, new Vector3(Camera.transform.position.x - 10, Camera.transform.position.y - 23, 0), Quaternion.identity);
             }
         }
-        else if(((kind == 9) || (kind == 19) || (kind >= 28 && kind <= 29) || (kind >= 36 && kind <= 39)))
+        else if(((skind == 9) || (skind == 19) || (skind >= 28 && skind <= 29) || (skind >= 36 && skind <= 39)))
         {
             GameObject warning = (GameObject)Instantiate(Warning, new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, 0), Quaternion.identity);
             GameObject meteor = (GameObject)Instantiate(Meteor, new Vector3(player.transform.position.x, player.transform.position.y +3, 0), Quaternion.identity);

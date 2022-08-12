@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    int h=0;
+    public int h;
     public static Level Instance;
     private void Awake()
     {
